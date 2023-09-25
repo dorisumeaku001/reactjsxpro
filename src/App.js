@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import product from './product';
+import { Card, Container, Row, Col} from 'react-bootstrap';
+import Name from './Name';
+import Price from './Price';
+import Description from './Description';
+import product from './product';
+
+const App = () => {
+  return(
+     <Container>
+      <Row>
+        <Col>
+        <Card>
+          <Card.Body>
+            <Name name={product.name}/>
+            <Price Price={product.Price}/>
+            <Description Description={product.description}/>
+          </Card.Body>
+        </Card>
+        </Col>
+      </Row>
+      </Container>
+  )
 }
 
 export default App;
